@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.notcharlie.githubfred</string>
+	<key>connections</key>
+	<dict>
+		<key>ad8eaf12-93df-425f-b6fe-0a39185afff8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8844540a-d94c-4af0-916e-e519ea591ef1</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Adam Brown</string>
+	<key>description</key>
+	<string>GitHub assistant for Alfred</string>
+	<key>name</key>
+	<string>githubfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8844540a-d94c-4af0-916e-e519ea591ef1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>gh</string>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>scriptfile</key>
+				<string>workflow.py</string>
+				<key>title</key>
+				<string>Search</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>ad8eaf12-93df-425f-b6fe-0a39185afff8</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<array/>
+	<key>variables</key>
+	<dict>
+		<key>PYTHONPATH</key>
+		<string>.:vendored</string>
+	</dict>
+	<key>version</key>
+	<string>0.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/acourtneybrown/githubfred</string>
+</dict>
+</plist>
