@@ -10,7 +10,13 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8844540a-d94c-4af0-916e-e519ea591ef1</string>
+				<string>B0FA587B-1A27-4B06-917B-EABBFFD025EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -18,6 +24,8 @@
 	<string>Adam Brown</string>
 	<key>description</key>
 	<string>GitHub assistant for Alfred</string>
+	<key>disabled</key>
+	<false/>
 	<key>name</key>
 	<string>githubfred</string>
 	<key>objects</key>
@@ -25,33 +33,40 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>8844540a-d94c-4af0-916e-e519ea591ef1</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttreatemptyqueryasnil</key>
 				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>gh</string>
+				<string>{var:github_prefix}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>Loading...</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>workflow.py</string>
+				<string>repos.py</string>
+				<key>subtext</key>
+				<string></string>
 				<key>title</key>
-				<string>Search</string>
+				<string>Search GitHub repos</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
@@ -61,10 +76,141 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>ad8eaf12-93df-425f-b6fe-0a39185afff8</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B0FA587B-1A27-4B06-917B-EABBFFD025EC</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
+	<key>readme</key>
+	<string></string>
 	<key>uidata</key>
-	<array/>
+	<dict>
+		<key>B0FA587B-1A27-4B06-917B-EABBFFD025EC</key>
+		<dict>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>ad8eaf12-93df-425f-b6fe-0a39185afff8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>repo search</string>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>GitHub username</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>github_username</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>api.github.com</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Hostname for GitHub server.  Only needs to be changed for hosted GitHub Enterprise instance.</string>
+			<key>label</key>
+			<string>GitHub host</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>github_host</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Optional. Only required for searching private repos &amp; creating forks.  If empty, will fallback to `$GITHUB_TOKEN` from `.zshenv`.</string>
+			<key>label</key>
+			<string>Personal Access Token</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>github_token_from_alfred_prefs</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gh</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Prefix</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>github_prefix</string>
+		</dict>
+	</array>
 	<key>variables</key>
 	<dict>
 		<key>PYTHONPATH</key>
