@@ -19,14 +19,14 @@ def token():
         "github_token_from_alfred_prefs" in os.environ
         and os.environ["github_token_from_alfred_prefs"].strip()
     ):
-        logging.debug("Found GitLab token from 'github_token_from_alfred_prefs'")
+        logging.debug("Found GitHub token from 'github_token_from_alfred_prefs'")
         return os.environ["github_token_from_alfred_prefs"]
 
     if "GITHUB_TOKEN" in os.environ and os.environ["GITHUB_TOKEN"].strip():
-        logging.debug("Found GitLab token from environment variable 'GITHUB_TOKEN'")
+        logging.debug("Found GitHub token from environment variable 'GITHUB_TOKEN'")
         return os.environ["GITHUB_TOKEN"]
 
-    logging.debug("Attempting to get GitLab token from 'TOKEN_SHELL_COMMAND'")
+    logging.debug("Attempting to get GitHub token from 'TOKEN_SHELL_COMMAND'")
     return subprocess.check_output(TOKEN_SHELL_COMMAND, shell=True).decode().strip()
 
 
