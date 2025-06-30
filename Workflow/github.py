@@ -38,5 +38,6 @@ def human_date(date: str) -> str:
     )
 
 
-def repo_name(repo: str) -> str:
+def repo_slug(repo: str) -> str:
+    """Extracts the repo slug from a `repository_url` field in a response"""
     return "/".join(repo.split("/")[-2:])

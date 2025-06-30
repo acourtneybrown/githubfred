@@ -34,7 +34,7 @@ def main(
     items = [
         OutputItem(
             title=f"{is_draft(pr['draft'])} {pr['title']}",
-            subtitle=f"#{pr['number']} {github.repo_name(pr['repository_url'])} ({github.human_date(pr['updated_at'])} ago)",
+            subtitle=f"#{pr['number']} {github.repo_slug(pr['repository_url'])} ({github.human_date(pr['updated_at'])} ago)",
             arg=pr["html_url"],
             quicklookurl=pr["html_url"],
         )

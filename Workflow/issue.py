@@ -31,7 +31,7 @@ def main(
     items = [
         OutputItem(
             title=i["title"],
-            subtitle=f"#{i['number']}  {github.repo_name(i['repository_url'])} - {', '.join([l['name'] for l in i['labels']])} ({github.human_date(i['updated_at'])} ago)",
+            subtitle=f"#{i['number']}  {github.repo_slug(i['repository_url'])} - {', '.join([l['name'] for l in i['labels']])} ({github.human_date(i['updated_at'])} ago)",
             arg=i["html_url"],
             quicklookurl=i["html_url"],
         )
