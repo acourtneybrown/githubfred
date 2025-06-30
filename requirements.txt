@@ -1,1 +1,4 @@
 pyfred-cli @ git+https://github.com/acourtneybrown/pyfred-cli@main
+
+humanize==4.12.3
+requests==2.32.4
