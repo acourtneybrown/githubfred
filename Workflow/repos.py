@@ -39,7 +39,7 @@ def main(
                 Key.Control: Data(
                     arg=[repo["ssh_url"], repo["full_name"]],
                 ),
-                Key.Option: Data(arg=repo["id"]),
+                Key.Option: Data(arg=repo["full_name"]),
             },
         )
         for repo in response.json()["items"]
