@@ -32,8 +32,7 @@ def token():
 
 def human_date(date: str) -> str:
     # "pad" the milliseconds section to equivalent microseconds
-    date = date.replace("Z", "000Z")
     return humanize.naturaldelta(
         dt.datetime.now(dt.timezone.utc)
-        - dt.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f%z")
+        - dt.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
     )
