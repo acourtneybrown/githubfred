@@ -36,3 +36,8 @@ def human_date(date: str) -> str:
         dt.datetime.now(dt.timezone.utc)
         - dt.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
     )
+
+
+def repo_slug(repo: str) -> str:
+    """Extracts the repo slug from a `repository_url` field in a response"""
+    return "/".join(repo.split("/")[-2:])

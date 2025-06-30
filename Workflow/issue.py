@@ -19,7 +19,7 @@ def main(
     response = requests.get(
         f"https://{host}/search/issues",
         params={
-            "q": f"type:pr is:open author:{github_username}",  # requests library will handle ' ' -> '+'
+            "q": f"type:issue is:open involves:{github_username}",  # requests library will handle ' ' -> '+'
             "sort": " updated",
         },
         headers={"Authorization": f"BEARER {github.token()}"},
@@ -28,17 +28,14 @@ def main(
     if not response.ok:
         return ScriptFilterOutput(items=[github.NO_RESULT])
 
-    def is_draft(draft: bool) -> str:
-        return "🟡" if draft else "🟢"
-
     items = [
         OutputItem(
-            title=f"{is_draft(pr['draft'])} {pr['title']}",
-            subtitle=f"#{pr['number']} {github.repo_slug(pr['repository_url'])} ({github.human_date(pr['updated_at'])} ago)",
-            arg=pr["html_url"],
-            quicklookurl=pr["html_url"],
+            title=i["title"],
+            subtitle=f"#{i['number']}  {github.repo_slug(i['repository_url'])} - {', '.join([l['name'] for l in i['labels']])} ({github.human_date(i['updated_at'])} ago)",
+            arg=i["html_url"],
+            quicklookurl=i["html_url"],
         )
-        for pr in response.json()["items"]
+        for i in response.json()["items"]
     ]
 
     if items:
