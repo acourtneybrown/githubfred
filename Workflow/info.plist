@@ -133,6 +133,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9BE13D3F-448F-4CA6-B821-ED851E2827E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0FA587B-1A27-4B06-917B-EABBFFD025EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A096D3D2-4218-47AF-8FF3-04E28BE5FBAD</key>
 		<array>
 			<dict>
@@ -293,6 +306,55 @@
 			<string>D3249DA4-9CC6-41D7-BB0D-54CBE663A02F</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:github_prefix}pr</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>loading…</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>pull_request.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search my GitHub pull requests</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9BE13D3F-448F-4CA6-B821-ED851E2827E7</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -556,14 +618,14 @@
 		<key>13E5FF2A-1269-465B-9788-CE0ECA0C1705</key>
 		<dict>
 			<key>xpos</key>
-			<real>665</real>
+			<real>705</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
 		<key>302280CE-4B60-4405-8D8E-9488C9216D0A</key>
 		<dict>
 			<key>xpos</key>
-			<real>970</real>
+			<real>1010</real>
 			<key>ypos</key>
 			<real>240</real>
 		</dict>
@@ -572,21 +634,21 @@
 			<key>note</key>
 			<string>clone repo</string>
 			<key>xpos</key>
-			<real>525</real>
+			<real>565</real>
 			<key>ypos</key>
 			<real>155</real>
 		</dict>
 		<key>41C5F815-6902-43D1-8465-20E85E3E0D66</key>
 		<dict>
 			<key>xpos</key>
-			<real>480</real>
+			<real>520</real>
 			<key>ypos</key>
 			<real>350</real>
 		</dict>
 		<key>5F5ED71B-B2CB-4692-9CAF-F798FFE2D3FA</key>
 		<dict>
 			<key>xpos</key>
-			<real>375</real>
+			<real>415</real>
 			<key>ypos</key>
 			<real>325</real>
 		</dict>
@@ -595,7 +657,7 @@
 			<key>note</key>
 			<string>set upsteam</string>
 			<key>xpos</key>
-			<real>815</real>
+			<real>855</real>
 			<key>ypos</key>
 			<real>220</real>
 		</dict>
@@ -604,7 +666,7 @@
 			<key>note</key>
 			<string>fork repo</string>
 			<key>xpos</key>
-			<real>225</real>
+			<real>265</real>
 			<key>ypos</key>
 			<real>305</real>
 		</dict>
@@ -613,21 +675,32 @@
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>625</real>
+			<real>665</real>
 			<key>ypos</key>
 			<real>295</real>
+		</dict>
+		<key>9BE13D3F-448F-4CA6-B821-ED851E2827E7</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>list pull requests</string>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>150</real>
 		</dict>
 		<key>A096D3D2-4218-47AF-8FF3-04E28BE5FBAD</key>
 		<dict>
 			<key>xpos</key>
-			<real>760</real>
+			<real>800</real>
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
 		<key>AFD3DF9C-B639-4793-8800-BD4115A9EB85</key>
 		<dict>
 			<key>xpos</key>
-			<real>1085</real>
+			<real>1125</real>
 			<key>ypos</key>
 			<real>235</real>
 		</dict>
@@ -641,7 +714,7 @@
 		<key>CA0F80B5-B0AC-474F-96FB-CF085A494C07</key>
 		<dict>
 			<key>xpos</key>
-			<real>445</real>
+			<real>485</real>
 			<key>ypos</key>
 			<real>235</real>
 		</dict>
@@ -650,7 +723,7 @@
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1080</real>
+			<real>1120</real>
 			<key>ypos</key>
 			<real>80</real>
 		</dict>

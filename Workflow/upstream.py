@@ -3,7 +3,6 @@ import os
 import subprocess
 from pathlib import Path
 from typing import Optional, Union
-from urllib.parse import quote_plus
 
 import github
 import requests
@@ -20,7 +19,7 @@ def main(
 
     response = requests.get(
         f"https://{host}/repos/{repo}",
-        headers={"PRIVATE-TOKEN": github.token()},
+        headers={"Authorization": f"BEARER {github.token()}"},
     )
     json = response.json()
 
