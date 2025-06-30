@@ -107,6 +107,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>65B4FD28-13AC-41AD-A3C5-94348A51A2D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0FA587B-1A27-4B06-917B-EABBFFD025EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7772E003-F9EA-486A-B9CC-B25EC69E03D9</key>
 		<array>
 			<dict>
@@ -516,6 +529,55 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:github_prefix}i</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>loading…</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>issue.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Navigate my GitLab issues</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>65B4FD28-13AC-41AD-A3C5-94348A51A2D3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -651,6 +713,17 @@
 			<real>415</real>
 			<key>ypos</key>
 			<real>325</real>
+		</dict>
+		<key>65B4FD28-13AC-41AD-A3C5-94348A51A2D3</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>list issues</string>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>285</real>
 		</dict>
 		<key>7772E003-F9EA-486A-B9CC-B25EC69E03D9</key>
 		<dict>
