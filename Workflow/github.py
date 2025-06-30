@@ -36,3 +36,7 @@ def human_date(date: str) -> str:
         dt.datetime.now(dt.timezone.utc)
         - dt.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
     )
+
+
+def repo_name(repo: str) -> str:
+    return "/".join(repo.split("/")[-2:])

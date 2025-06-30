@@ -31,13 +31,10 @@ def main(
     def is_draft(draft: bool) -> str:
         return "🟡" if draft else "🟢"
 
-    def repo_name(repo: str) -> str:
-        return "/".join(repo.split("/")[-2:])
-
     items = [
         OutputItem(
             title=f"{is_draft(pr['draft'])} {pr['title']}",
-            subtitle=f"#{pr['number']} {repo_name(pr['repository_url'])} ({github.human_date(pr['updated_at'])} ago)",
+            subtitle=f"#{pr['number']} {github.repo_name(pr['repository_url'])} ({github.human_date(pr['updated_at'])} ago)",
             arg=pr["html_url"],
             quicklookurl=pr["html_url"],
         )
