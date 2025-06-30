@@ -19,7 +19,7 @@ def main(
     response = requests.get(
         f"https://{host}/search/issues",
         params={
-            "q": f"type:pr is:open author:{github_username}",
+            "q": f"type:pr is:open author:{github_username}",  # requests library will handle ' ' -> '+'
             "sort": " updated",
         },
         headers={"Authorization": f"BEARER {github.token()}"},
