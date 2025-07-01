@@ -46,3 +46,40 @@ def human_date(date: str) -> str:
 def repo_slug(repo: str) -> str:
     """Extracts the repo slug from a `repository_url` field in a response"""
     return "/".join(repo.split("/")[-2:])
+
+
+def _auth_normalize(hostname: str) -> str:
+    if hostname.endswith(".github.com"):
+        return "github.com"
+    if hostname.endswith(".github.localhost"):
+        return "github.localhost"
+    if hostname.endswith(".ghe.com"):
+        return ".".join(hostname.split(".")[-3:])
+    return hostname
+
+
+def _auth_is_enterprise(hostname: str) -> bool:
+    hostname = _auth_normalize(hostname)
+    return (
+        hostname != "github.com"
+        and hostname != "github.localhost"
+        and not hostname.endswith(".ghe.com")
+    )
+
+
+def rest_prefix(hostname: str) -> str:
+    """
+    Given a hostname as would be passed as --hostname argument to `gh`,
+    translate it into the prefix for URLs used to interact with the
+    GitHub instance's REST API.
+
+    See: https://github.com/cli/go-gh/blob/a08820a13f257d6c5b4cb86d37db559ec6d14577/pkg/api/rest_client.go#L160
+    """
+    if hostname.casefold() == "garage.github.com".casefold():
+        return f"https://{hostname}/api/v3/"
+    hostname = _auth_normalize(hostname)
+    if _auth_is_enterprise(hostname):
+        return f"https://{hostname}/api/v3/"
+    if hostname.casefold() == "github.localhost".casefold():
+        return f"https://api.{hostname}/"
+    return f"https://api.{hostname}/"

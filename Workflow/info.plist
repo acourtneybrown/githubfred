@@ -1386,7 +1386,7 @@ fi
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>api.github.com</string>
+				<string>github.com</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
