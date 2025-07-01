@@ -12,6 +12,11 @@ NO_RESULT = OutputItem(
     subtitle="Try again later.",
     valid=False,
 )
+ERROR_RESULT = OutputItem(
+    title="Error result from GitHub",
+    subtitle="Try again later.",
+    valid=False,
+)
 
 
 def token():
