@@ -1098,7 +1098,50 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># Alfred GitHubFred
+
+Helpful GitHub assistant for Alfred
+
+## Usage
+
+- Search GitHub repositories (public only without GitHub Token set) via the keyword `gh`.
+	+ &lt;kbd&gt;⏎&lt;/kbd&gt;: Open the repo's GitHub page.
+	+ &lt;kbd&gt;⌘C&lt;/kbd&gt;: Copy the repo URL.
+	+ &lt;kbd&gt;⌃⏎&lt;/kbd&gt;: Clone the repo to a local folder and open in the Terminal.
+	+ &lt;kbd&gt;⌥⏎&lt;/kbd&gt;: Fork the repo &amp; clone the fork to a local folder. Then open in Terminal.
+- Access pull requests you have opened with keyword `ghpr`.
+	+ &lt;kbd&gt;⏎&lt;/kbd&gt;: Open the PR in the browser.
+	+ &lt;kbd&gt;⌘C&lt;/kbd&gt;: Copy the PR URL.
+- Open recent GitHub issues you are involved in with `ghi`.
+	+ &lt;kbd&gt;⏎&lt;/kbd&gt;: Open the issue in the browser.
+	+ &lt;kbd&gt;⌘C&lt;/kbd&gt;: Copy the issue URL.
+- Access your GitHub notifications list with keyword `ghn`.
+	+ &lt;kbd&gt;⏎&lt;/kbd&gt;: Open the notification in the browser.
+	+ &lt;kbd&gt;⌃⏎&lt;/kbd&gt;: Mark the notification as read.
+    + &lt;kbd&gt;⌃⏎&lt;/kbd&gt;: Mark the notification as done.
+	+ &lt;kbd&gt;⌘C&lt;/kbd&gt;: Copy the notification's API URL.
+
+The `gh` prefix can be changed in the configuration page, thus affecting all the keywords.
+
+## GitHub Token
+
+1. Add the **GitHub Token** in the Alfred workflow configuration.
+2. Or: export the token in your `.zshenv`.
+
+```zsh
+# add this to your `$HOME/.zshenv`
+# ($alfred_workflow_name is only populated by shell processes that called by Alfred)
+if [[ "$alfred_workflow_name" == "GitHubFred" ]]; then
+	# if using a password manager, you can do something like this 
+	# (`op` being the CLI for 1Password)
+	GitHub_SERVER_TOKEN=$(op read "op://vault/GitHub.com/token")
+	export GitHub_SERVER_TOKEN
+fi
+```
+
+## Installation
+
+[➡️ Download the latest release](https://github.com/acourtneybrown/GitHubFred/releases)</string>
 	<key>uidata</key>
 	<dict>
 		<key>01C7B473-1043-4E10-B8BE-4F5FB613560A</key>
@@ -1375,7 +1418,7 @@
 			<key>description</key>
 			<string>Optional. Only required for searching private repos &amp; creating forks.  If empty, will fallback to `$GITHUB_TOKEN` from `.zshenv`.</string>
 			<key>label</key>
-			<string>Personal Access Token</string>
+			<string>GitHub Token</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
