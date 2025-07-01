@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import os
 from pathlib import Path
 from typing import Optional, Union
 
@@ -13,7 +12,6 @@ from pyfred.workflow import external_script
 def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
 ) -> Union[str, list[str]]:
-    host = os.environ.get("github_host")
     api_url = args_from_alfred[0]
 
     response = requests.get(

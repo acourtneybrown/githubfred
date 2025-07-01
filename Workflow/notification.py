@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import os
-import re
 from pathlib import Path
-from typing import Optional, Union
+from typing import Optional
 
 import github
 import requests
