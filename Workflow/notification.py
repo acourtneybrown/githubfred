@@ -35,7 +35,6 @@ def main(
             title=n["subject"]["title"],
             subtitle=f"{n['repository']['full_name']}  ({github.human_date(n['updated_at'])} ago)",
             arg=n["subject"]["url"],
-            mods={Key.Control: Data(arg=n["id"])},
         )
         for n in response.json()
     ]
