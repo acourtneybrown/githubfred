@@ -13,11 +13,11 @@ from pyfred.workflow import script_filter
 def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
 ) -> ScriptFilterOutput:
-    host = os.environ.get("github_host")
+    prefix = github.rest_prefix(os.environ.get("github_host"))
     github_username = os.environ.get("github_username")
 
     response = requests.get(
-        f"https://{host}/search/issues",
+        f"{prefix}search/issues",
         params={
             "q": f"type:issue is:open involves:{github_username}",  # requests library will handle ' ' -> '+'
             "sort": " updated",

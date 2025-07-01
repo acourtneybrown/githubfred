@@ -20,10 +20,10 @@ from pyfred.workflow import script_filter
 def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
 ) -> ScriptFilterOutput:
-    host = os.environ.get("github_host")
+    prefix = github.rest_prefix(os.environ.get("github_host"))
 
     response = requests.get(
-        f"https://{host}/notifications",
+        f"{prefix}notifications",
         headers={"Authorization": f"BEARER {github.token()}"},
     )
 

@@ -16,10 +16,10 @@ def main(
 ) -> Union[str, list[str]]:
     to_fork = args_from_alfred[0]
     logging.info(f"Preparing to fork {to_fork}")
-    host = os.environ.get("github_host")
+    prefix = github.rest_prefix(os.environ.get("github_host"))
 
     response = requests.post(
-        f"https://{host}/repos/{to_fork}/forks",
+        f"{prefix}repos/{to_fork}/forks",
         headers={"Authorization": f"BEARER {github.token()}"},
     )
     forked_repo = response.json()
