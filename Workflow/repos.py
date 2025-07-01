@@ -29,11 +29,11 @@ def main(
 ) -> ScriptFilterOutput:
     if len(args_from_alfred) < 1:
         return ScriptFilterOutput(items=[WAITING_ITEM, _my_repos_item()])
-    host = os.environ.get("github_host")
+    prefix = github.rest_prefix(os.environ.get("github_host"))
 
     search_term = args_from_alfred[0]
     response = requests.get(
-        f"https://{host}/search/repositories",
+        f"{prefix}search/repositories",
         params={
             "q": search_term,
         },
