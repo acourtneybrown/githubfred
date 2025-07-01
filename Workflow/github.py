@@ -49,6 +49,11 @@ def repo_slug(repo: str) -> str:
 
 
 def _auth_normalize(hostname: str) -> str:
+    """
+    Replicates auth.NormalizeHostname from GitHub `cli/cli
+
+    See: https://github.com/cli/go-gh/blob/a08820a13f257d6c5b4cb86d37db559ec6d14577/pkg/auth/auth.go#L178
+    """
     if hostname.endswith(".github.com"):
         return "github.com"
     if hostname.endswith(".github.localhost"):
@@ -59,6 +64,11 @@ def _auth_normalize(hostname: str) -> str:
 
 
 def _auth_is_enterprise(hostname: str) -> bool:
+    """
+    Replicates auth.IsEnterprise from GitHub `cli/cli`
+
+    See: https://github.com/cli/go-gh/blob/a08820a13f257d6c5b4cb86d37db559ec6d14577/pkg/auth/auth.go#L161
+    """
     hostname = _auth_normalize(hostname)
     return (
         hostname != "github.com"
