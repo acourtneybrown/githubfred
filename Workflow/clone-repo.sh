@@ -4,7 +4,7 @@ ssh_url="$1"
 clone_dir="$2"
 
 # shellcheck disable=SC2154
-[[ -z "$local_repo_root" ]] && local_repo_root="$HOME/$gitlab_host"
+[[ -z "$local_repo_root" ]] && local_repo_root="$HOME/$github_host"
 [[ ! -d "$local_repo_root" ]] && mkdir -p "$local_repo_root"
 cd "$local_repo_root" || return 1
 

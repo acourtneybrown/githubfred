@@ -11,7 +11,7 @@ from pyfred.workflow import script_filter
 
 def _pr_link_item(host=os.environ.get("github_host")) -> OutputItem:
     return OutputItem(
-        title="View pull reqeust page on Gitea",
+        title="View pull reqeust page on GitHub",
         arg=f"https://{host}/pulls",
     )
 
