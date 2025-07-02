@@ -9,6 +9,13 @@ from pyfred.model import Environment, ScriptFilterOutput, OutputItem, CacheConfi
 from pyfred.workflow import script_filter
 
 
+def _issues_link_item(host=os.environ.get("github_host")) -> OutputItem:
+    return OutputItem(
+        title="View issues dashboard on GitHub",
+        arg=f"https://{host}/issues",
+    )
+
+
 @script_filter
 def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
@@ -26,7 +33,7 @@ def main(
     )
 
     if not response.ok:
-        return ScriptFilterOutput(items=[github.NO_RESULT])
+        return ScriptFilterOutput(items=[github.ERROR_RESULT])
 
     items = [
         OutputItem(
@@ -40,9 +47,10 @@ def main(
 
     if items:
         return ScriptFilterOutput(
-            items=items, cache=CacheConfig(seconds=120, loosereload=True)
+            items=[*items, _issues_link_item()],
+            cache=CacheConfig(seconds=120, loosereload=True),
         )
-    return ScriptFilterOutput(items=[github.NO_RESULT])
+    return ScriptFilterOutput(items=[github.NO_RESULT, _issues_link_item()])
 
 
 if __name__ == "__main__":
