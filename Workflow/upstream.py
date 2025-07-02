@@ -15,10 +15,10 @@ def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
 ) -> Union[str, list[str]]:
     (repo, abs_path) = args_from_alfred
-    host = os.environ.get("github_host")
+    prefix = github.rest_prefix(os.environ.get("github_host"))
 
     response = requests.get(
-        f"https://{host}/repos/{repo}",
+        f"{prefix}repos/{repo}",
         headers={"Authorization": f"BEARER {github.token()}"},
     )
     json = response.json()
