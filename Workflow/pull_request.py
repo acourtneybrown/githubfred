@@ -9,6 +9,13 @@ from pyfred.model import Environment, ScriptFilterOutput, OutputItem, CacheConfi
 from pyfred.workflow import script_filter
 
 
+def _pr_link_item(host=os.environ.get("github_host")) -> OutputItem:
+    return OutputItem(
+        title="View pull reqeust page on Gitea",
+        arg=f"https://{host}/pulls",
+    )
+
+
 @script_filter
 def main(
     script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
@@ -26,7 +33,7 @@ def main(
     )
 
     if not response.ok:
-        return ScriptFilterOutput(items=[github.NO_RESULT])
+        return ScriptFilterOutput(items=[github.ERROR_RESULT])
 
     def is_draft(draft: bool) -> str:
         return "🟡" if draft else "🟢"
@@ -43,9 +50,10 @@ def main(
 
     if items:
         return ScriptFilterOutput(
-            items=items, cache=CacheConfig(seconds=120, loosereload=True)
+            items=[*items, _pr_link_item()],
+            cache=CacheConfig(seconds=120, loosereload=True),
         )
-    return ScriptFilterOutput(items=[github.NO_RESULT])
+    return ScriptFilterOutput(items=[github.NO_RESULT, _pr_link_item()])
 
 
 if __name__ == "__main__":
