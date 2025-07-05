@@ -1351,81 +1351,81 @@ fi
 			<key>note</key>
 			<string>mark notification done</string>
 			<key>xpos</key>
-			<real>465</real>
+			<real>465.0</real>
 			<key>ypos</key>
-			<real>555</real>
+			<real>555.0</real>
 		</dict>
 		<key>11A711DD-3163-472B-8693-28242EF1CE4D</key>
 		<dict>
 			<key>xpos</key>
-			<real>630</real>
+			<real>630.0</real>
 			<key>ypos</key>
-			<real>575</real>
+			<real>575.0</real>
 		</dict>
 		<key>13E5FF2A-1269-465B-9788-CE0ECA0C1705</key>
 		<dict>
 			<key>xpos</key>
-			<real>905</real>
+			<real>905.0</real>
 			<key>ypos</key>
-			<real>155</real>
+			<real>155.0</real>
 		</dict>
 		<key>24E9BD0B-D18E-4B7D-9F48-B214339948DD</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>585.0</real>
 			<key>ypos</key>
-			<real>840</real>
+			<real>840.0</real>
 		</dict>
 		<key>27914D56-EDDD-4AB9-AC93-F081B2BE1EE8</key>
 		<dict>
 			<key>xpos</key>
-			<real>505</real>
+			<real>505.0</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>720.0</real>
 		</dict>
 		<key>302280CE-4B60-4405-8D8E-9488C9216D0A</key>
 		<dict>
 			<key>xpos</key>
-			<real>1210</real>
+			<real>1210.0</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>220.0</real>
 		</dict>
 		<key>36266297-5A83-4323-9D0A-F135ABC01C56</key>
 		<dict>
 			<key>note</key>
 			<string>clone repo</string>
 			<key>xpos</key>
-			<real>765</real>
+			<real>765.0</real>
 			<key>ypos</key>
-			<real>135</real>
+			<real>135.0</real>
 		</dict>
 		<key>41C5F815-6902-43D1-8465-20E85E3E0D66</key>
 		<dict>
 			<key>xpos</key>
-			<real>720</real>
+			<real>720.0</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>330.0</real>
 		</dict>
 		<key>4CB8868C-C8A9-4DA1-BDA9-D548E5145506</key>
 		<dict>
 			<key>xpos</key>
-			<real>630</real>
+			<real>630.0</real>
 			<key>ypos</key>
-			<real>440</real>
+			<real>440.0</real>
 		</dict>
 		<key>5BF0BC19-17B1-4AB8-90D8-0F24CD58D9DF</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>865.0</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>435.0</real>
 		</dict>
 		<key>5F5ED71B-B2CB-4692-9CAF-F798FFE2D3FA</key>
 		<dict>
 			<key>xpos</key>
-			<real>615</real>
+			<real>615.0</real>
 			<key>ypos</key>
-			<real>305</real>
+			<real>305.0</real>
 		</dict>
 		<key>65B4FD28-13AC-41AD-A3C5-94348A51A2D3</key>
 		<dict>
@@ -1434,52 +1434,52 @@ fi
 			<key>note</key>
 			<string>list issues</string>
 			<key>xpos</key>
-			<real>190</real>
+			<real>190.0</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>285.0</real>
 		</dict>
 		<key>7772E003-F9EA-486A-B9CC-B25EC69E03D9</key>
 		<dict>
 			<key>note</key>
 			<string>set upsteam</string>
 			<key>xpos</key>
-			<real>1055</real>
+			<real>1055.0</real>
 			<key>ypos</key>
-			<real>200</real>
+			<real>200.0</real>
 		</dict>
 		<key>7D13FA1A-8355-45B3-A50C-BA205B2C1EE6</key>
 		<dict>
 			<key>note</key>
 			<string>fork repo</string>
 			<key>xpos</key>
-			<real>465</real>
+			<real>465.0</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>285.0</real>
 		</dict>
 		<key>856487F3-AD2C-4B83-99A1-931839DF02A0</key>
 		<dict>
 			<key>note</key>
 			<string>map from api url to html url</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>585.0</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>690.0</real>
 		</dict>
 		<key>8C89393E-3581-4F7E-9BAB-A784BA0DDD8D</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>865</real>
+			<real>865.0</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>275.0</real>
 		</dict>
 		<key>9793E2F4-1147-4A6E-85EE-E94BA9184858</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<real>30.0</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>15.0</real>
 		</dict>
 		<key>9BE13D3F-448F-4CA6-B821-ED851E2827E7</key>
 		<dict>
@@ -1488,69 +1488,69 @@ fi
 			<key>note</key>
 			<string>list pull requests</string>
 			<key>xpos</key>
-			<real>190</real>
+			<real>190.0</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>150.0</real>
 		</dict>
 		<key>9FB32E9B-6A44-490E-931B-633A379B49C4</key>
 		<dict>
 			<key>note</key>
 			<string>mark notification read</string>
 			<key>xpos</key>
-			<real>465</real>
+			<real>465.0</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>420.0</real>
 		</dict>
 		<key>A096D3D2-4218-47AF-8FF3-04E28BE5FBAD</key>
 		<dict>
 			<key>xpos</key>
-			<real>1000</real>
+			<real>1000.0</real>
 			<key>ypos</key>
-			<real>230</real>
+			<real>230.0</real>
 		</dict>
 		<key>AFD3DF9C-B639-4793-8800-BD4115A9EB85</key>
 		<dict>
 			<key>xpos</key>
-			<real>1325</real>
+			<real>1325.0</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>215.0</real>
 		</dict>
 		<key>B0FA587B-1A27-4B06-917B-EABBFFD025EC</key>
 		<dict>
 			<key>xpos</key>
-			<real>535</real>
+			<real>535.0</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>15.0</real>
 		</dict>
 		<key>B4639BB4-2798-4915-8E0F-C8D2DF4BEF92</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>865.0</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>570.0</real>
 		</dict>
 		<key>B54561C8-E033-4B94-B8AE-7B8B4F7A5659</key>
 		<dict>
 			<key>xpos</key>
-			<real>505</real>
+			<real>505.0</real>
 			<key>ypos</key>
-			<real>870</real>
+			<real>870.0</real>
 		</dict>
 		<key>CA0F80B5-B0AC-474F-96FB-CF085A494C07</key>
 		<dict>
 			<key>xpos</key>
-			<real>685</real>
+			<real>685.0</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>215.0</real>
 		</dict>
 		<key>D3249DA4-9CC6-41D7-BB0D-54CBE663A02F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1320</real>
+			<real>1320.0</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>60.0</real>
 		</dict>
 		<key>D6BCEEBB-8876-477B-B52B-D94B7AA83343</key>
 		<dict>
@@ -1559,30 +1559,30 @@ fi
 			<key>note</key>
 			<string>list notifications</string>
 			<key>xpos</key>
-			<real>190</real>
+			<real>190.0</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>420.0</real>
 		</dict>
 		<key>DB09E5DD-EADF-4A88-8704-46171769101F</key>
 		<dict>
 			<key>xpos</key>
-			<real>390</real>
+			<real>390.0</real>
 			<key>ypos</key>
-			<real>725</real>
+			<real>725.0</real>
 		</dict>
 		<key>E1C1AC5B-7A53-4EC8-BEC7-68292837E9CC</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>865.0</real>
 			<key>ypos</key>
-			<real>705</real>
+			<real>705.0</real>
 		</dict>
 		<key>E6488B2E-DCEF-42A6-B685-03920E3DBDBD</key>
 		<dict>
 			<key>xpos</key>
-			<real>730</real>
+			<real>730.0</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>710.0</real>
 		</dict>
 		<key>ad8eaf12-93df-425f-b6fe-0a39185afff8</key>
 		<dict>
@@ -1591,9 +1591,9 @@ fi
 			<key>note</key>
 			<string>repo search</string>
 			<key>xpos</key>
-			<real>190</real>
+			<real>190.0</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>15.0</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1710,7 +1710,7 @@ fi
 		<string>.:vendored</string>
 	</dict>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/acourtneybrown/githubfred</string>
 </dict>
