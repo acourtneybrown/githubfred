@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
+import re
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List
 
 import github
 import requests
@@ -9,25 +10,25 @@ from pyfred.model import Environment, OutputItem, ScriptFilterOutput, Key, Data
 from pyfred.workflow import script_filter
 
 WAITING_ITEM = OutputItem(title="Waiting for query...", valid=False)
+USER_PATTERN = re.compile(r"(?:^|\s*)user:\s*(?P<user>.*?)(?:\s|$)")
 
 
 def _my_repos_item(
     search_term="",
     username=os.environ.get("github_username"),
 ) -> OutputItem:
-    search_term_without_user = search_term.removeprefix(f"{username}/")
     return OutputItem(
-        title=f"Search my repos{' for ' + search_term_without_user if search_term_without_user else ''}...",
-        autocomplete=f"{username}/{search_term_without_user}",
+        title=f"Search my repos{' for ' + search_term if search_term else ''}...",
+        autocomplete=f"user:{username} {search_term}",
         valid=False,
     )
 
 
 @script_filter
 def main(
-    script_path: Path, args_from_alfred: list[str], env: Optional[Environment]
+    script_path: Path, args_from_alfred: List[str], env: Optional[Environment]
 ) -> ScriptFilterOutput:
-    if len(args_from_alfred) < 1:
+    if not args_from_alfred:
         return ScriptFilterOutput(items=[WAITING_ITEM, _my_repos_item()])
     prefix = github.rest_prefix(os.environ.get("github_host"))
 
@@ -58,9 +59,13 @@ def main(
         )
         for repo in response.json()["items"]
     ]
+
+    extra_items = (
+        [_my_repos_item(search_term)] if not USER_PATTERN.match(search_term) else []
+    )
     if items:
-        return ScriptFilterOutput(items=[*items, _my_repos_item(search_term)])
-    return ScriptFilterOutput(items=[github.NO_RESULT, _my_repos_item(search_term)])
+        return ScriptFilterOutput(items=[*items, *extra_items])
+    return ScriptFilterOutput(items=[github.NO_RESULT, *extra_items])
 
 
 if __name__ == "__main__":
