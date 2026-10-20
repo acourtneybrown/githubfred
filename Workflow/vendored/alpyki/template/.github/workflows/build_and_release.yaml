@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  build:
+    name: Publish binaries
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v7.0.1
+
+    - name: Set up Python {{ system_python_version }}
+      uses: actions/setup-python@v7.0.0
+      with:
+        python-version: "{{ system_python_version }}"
+
+    - name: Install alpyki
+      run: |
+        pip install git+https://gitea.notcharlie.com/acourtneybrown/alpyki@main
+
+    - name: Package
+      env:
+        REPO: ${{ '{{ github.event.repository.name }}' }}
+      run: |
+        alpyki package --name $REPO
+
+    - name: Build Changelog
+      id: changelog
+      uses: mikepenz/release-changelog-builder-action@v6.4.0
+      env:
+        GITHUB_TOKEN: ${{ '{{ secrets.GITHUB_TOKEN }}' }}
+
+    - name: Create release
+      uses: softprops/action-gh-release@v3.0.3
+      with:
+        files: dist/*.alfredworkflow
+        body: ${{ '{{ steps.changelog.outputs.changelog }}' }}

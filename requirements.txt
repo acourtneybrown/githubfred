@@ -1,4 +1,3 @@
-pyfred-cli @ git+https://github.com/acourtneybrown/pyfred-cli@main
-
+alpyki==0.2.0
 humanize==4.12.3
 requests==2.32.4

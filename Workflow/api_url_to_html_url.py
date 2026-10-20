@@ -4,8 +4,8 @@ from typing import Optional, Union
 
 import github
 import requests
-from pyfred.model import Environment
-from pyfred.workflow import external_script
+from alpyki.model import Environment
+from alpyki.workflow import external_script
 
 
 @external_script

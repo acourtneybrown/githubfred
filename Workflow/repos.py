@@ -6,8 +6,8 @@ from typing import Optional, List
 
 import github
 import requests
-from pyfred.model import Environment, OutputItem, ScriptFilterOutput, Key, Data
-from pyfred.workflow import script_filter
+from alpyki.model import Environment, OutputItem, ScriptFilterOutput, Key, Data
+from alpyki.workflow import script_filter
 
 WAITING_ITEM = OutputItem(title="Waiting for query...", valid=False)
 USER_PATTERN = re.compile(r"(?:^|\s*)user:\s*(?P<user>.*?)(?:\s|$)")
