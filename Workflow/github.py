@@ -4,7 +4,7 @@ import subprocess
 
 import humanize
 import datetime as dt
-from pyfred.model import OutputItem
+from alpyki.model import OutputItem
 
 TOKEN_SHELL_COMMAND = "test -e ~/.zshenv && source ~/.zshenv ; echo $GITHUB_TOKEN"
 NO_RESULT = OutputItem(

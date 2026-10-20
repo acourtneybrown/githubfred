@@ -5,7 +5,7 @@ from typing import Optional
 
 import github
 import requests
-from pyfred.model import (
+from alpyki.model import (
     Environment,
     ScriptFilterOutput,
     OutputItem,
@@ -13,7 +13,7 @@ from pyfred.model import (
     Key,
     Data,
 )
-from pyfred.workflow import script_filter
+from alpyki.workflow import script_filter
 
 
 def _notifications_link_item(host=os.environ.get("github_host")) -> OutputItem:

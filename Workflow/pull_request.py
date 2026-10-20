@@ -5,8 +5,8 @@ from typing import Optional
 
 import github
 import requests
-from pyfred.model import Environment, ScriptFilterOutput, OutputItem, CacheConfig
-from pyfred.workflow import script_filter
+from alpyki.model import Environment, ScriptFilterOutput, OutputItem, CacheConfig
+from alpyki.workflow import script_filter
 
 
 def _pr_link_item(host=os.environ.get("github_host")) -> OutputItem:

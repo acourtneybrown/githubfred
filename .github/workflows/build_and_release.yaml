@@ -22,15 +22,15 @@ jobs:
       with:
         python-version: "3.9"
 
-    - name: Install pyfred
+    - name: Install alpyki
       run: |
-        pip install git+https://github.com/acourtneybrown/pyfred-cli@main
+        pip install alpyki
 
     - name: Package
       env:
         REPO: ${{ github.event.repository.name }}
       run: |
-        pyfred package --name $REPO
+        alpyki package --name $REPO
 
     - name: Build Changelog
       id: github_release
